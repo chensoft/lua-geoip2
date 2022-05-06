@@ -15,7 +15,7 @@ static const MMDB_entry_data_list_s* geoip2_encode(lua_State *L, const MMDB_entr
 
             for (entry_data_list = entry_data_list->next; size && entry_data_list; size--)
             {
-                char key[entry_data_list->entry_data.data_size + 1];
+                char key[(int)entry_data_list->entry_data.data_size + 1];
                 key[entry_data_list->entry_data.data_size] = '\0';
 
                 memcpy(key, entry_data_list->entry_data.utf8_string, entry_data_list->entry_data.data_size);
