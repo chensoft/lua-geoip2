@@ -1,5 +1,5 @@
 package = "geoip2"
-version = "1.0.0-2"
+version = "1.0.0-3"
 source = {
    url = "git://github.com/chensoft/lua-geoip2",
    branch = "v1.0.0"

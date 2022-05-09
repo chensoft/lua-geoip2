@@ -17,9 +17,10 @@ file(GLOB PROJ_SRC src/*.c)
 # third party
 find_package(Lua REQUIRED)
 find_library(maxminddb maxminddb REQUIRED)
+find_path(MAXMINDDB_INCLUDE_DIR maxminddb.h)
 
 # generate lib
-target_include_directories(geoip2 PRIVATE ${LUA_INCLUDE_DIR})
+target_include_directories(geoip2 PRIVATE ${MAXMINDDB_INCLUDE_DIR} ${LUA_INCLUDE_DIR})
 target_sources(geoip2 PRIVATE ${PROJ_INC} ${PROJ_SRC})
 target_link_libraries(geoip2 maxminddb ${LUA_LIBRARIES})
 
